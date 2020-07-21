@@ -57,6 +57,7 @@ class MyStack extends TerraformStack {
         key: file.replace(`../web/build/`, ''),       // Using relative path for folder structure on S3
         bucket: BUCKET_NAME,
         source: path.resolve(file),          // Using absolute path to upload
+        etag: `${Date.now()}`,
         contentType: mime.contentType(path.extname(file)) || undefined       // Set the content-type for each object
       });
     }
