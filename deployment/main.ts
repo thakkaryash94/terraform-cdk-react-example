@@ -48,7 +48,7 @@ class MyStack extends TerraformStack {
     });
 
     // Get all the files from build folder, skip directories
-    var files = glob.sync('../web/build/**/*', { absolute: false, nodir: true });
+    const files = glob.sync('../web/build/**/*', { absolute: false, nodir: true });
 
     // Create bucket object for each file
     for (const file of files) {
